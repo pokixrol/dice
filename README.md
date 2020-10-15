@@ -1,1 +1,2 @@
-"# dice" 
+# Dice
+Game made with javaScript
