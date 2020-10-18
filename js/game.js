@@ -1,3 +1,61 @@
+const ctyrykostka = document.getElementById('ctyrykostka');
+const ctyrystatistika = document.getElementById('ctyrystatistika');
+const ctyrytlacitko = document.getElementById('ctyrytlacitko');
+let hod4 = 1;
+let hody4 = [];
+let timer4 = false;
+
+function animace4 () {
+    hod4 = Math.ceil (Math.random() * 4);
+    ctyrykostka.src = '4kostka/4kostka' + hod4 + '.png';
+}
+ctyrytlacitko.addEventListener('click', function(){
+    if(!timer4){
+        timer4 = setInterval(animace4, 50);
+        ctyrytlacitko.innerText = 'Stop';
+    }else{
+        clearInterval(timer4);
+        timer4 = false;
+        ctyrytlacitko.innerText = 'Play';
+        hody4.push(hod4);
+        vypisStatistiky4();
+    }
+    
+})
+
+function suma4(){
+    let sum = 0;
+    for (let i = 0; i < hody4.length; i++) {
+        sum += hody4[i];
+    }
+    return sum;
+}
+
+function max4(){
+    let maximum = 1;
+    hody4.forEach(function(value, index){
+        if (value > maximum) maximum = value;
+    })
+    return maximum;
+}
+
+function min4(){
+    let minimum = 4;
+    hody4.forEach(function(value, index){
+        if (value < minimum) minimum = value;
+    })
+    return minimum;
+}
+function vypisStatistiky4 (){
+    ctyrystatistika.innerHTML = `<p>Poslední hod: ${hod4}</p>`;
+    ctyrystatistika.innerHTML += `<p>Počet hodů: ${hody4.length}</p>`;
+    ctyrystatistika.innerHTML += `<p>Součet: ${suma4()}</p>`;
+    ctyrystatistika.innerHTML += `<p>Průměr: ${(suma4() / hody4.length).toFixed(2)}</p>`;
+    ctyrystatistika.innerHTML += `<p>Maximum: ${max4()}</p>`;
+    ctyrystatistika.innerHTML += `<p>Minimum: ${min4()}</p>`;
+}
+
+
 const kostka = document.getElementById('kostka');
 const statistika = document.getElementById('statistika');
 const tlacitko = document.getElementById('tlacitko');
@@ -82,8 +140,8 @@ dvanacttlacitko.addEventListener('click', function(){
 
 function suma12(){
     let sum = 0;
-    for (let i = 0; i < hody.length; i++) {
-        sum += hody[i];
+    for (let i = 0; i < hody12.length; i++) {
+        sum += hody12[i];
     }
     return sum;
 }
@@ -97,7 +155,7 @@ function max12(){
 }
 
 function min12(){
-    let minimum = 6;
+    let minimum = 12;
     hody12.forEach(function(value, index){
         if (value < minimum) minimum = value;
     })
@@ -111,3 +169,66 @@ function vypisStatistiky12 (){
     dvanactstatistika.innerHTML += `<p>Maximum: ${max12()}</p>`;
     dvanactstatistika.innerHTML += `<p>Minimum: ${min12()}</p>`;
 }
+const dvacetkostka = document.getElementById('dvacetkostka');
+const dvacetstatistika = document.getElementById('dvacetstatistika');
+const dvacettlacitko = document.getElementById('dvacettlacitko');
+let hod20 = 1;
+let hody20 = [];
+let timer20 = false;
+
+function animace20 () {
+    hod20 = Math.ceil (Math.random() * 20);
+    dvacetkostka.src = '20kostka/20kostka' + hod20 + '.png';
+}
+dvacettlacitko.addEventListener('click', function(){
+    if(!timer20){
+        timer20 = setInterval(animace20, 50);
+        dvacettlacitko.innerText = 'Stop';
+    }else{
+        clearInterval(timer20);
+        timer20 = false;
+        dvacettlacitko.innerText = 'Play';
+        hody20.push(hod20);
+        vypisStatistiky20();
+    }
+    
+})
+
+function suma20(){
+    let sum = 0;
+    for (let i = 0; i < hody20.length; i++) {
+        sum += hody20[i];
+    }
+    return sum;
+}
+
+function max20(){
+    let maximum = 1;
+    hody20.forEach(function(value, index){
+        if (value > maximum) maximum = value;
+    })
+    return maximum;
+}
+
+function min20(){
+    let minimum = 20;
+    hody20.forEach(function(value, index){
+        if (value < minimum) minimum = value;
+    })
+    return minimum;
+}
+function vypisStatistiky20 (){
+    dvacetstatistika.innerHTML = `<p>Poslední hod: ${hod20}</p>`;
+    dvacetstatistika.innerHTML += `<p>Počet hodů: ${hody20.length}</p>`;
+    dvacetstatistika.innerHTML += `<p>Součet: ${suma20()}</p>`;
+    dvacetstatistika.innerHTML += `<p>Průměr: ${(suma20() / hody20.length).toFixed(2)}</p>`;
+    dvacetstatistika.innerHTML += `<p>Maximum: ${max20()}</p>`;
+    dvacetstatistika.innerHTML += `<p>Minimum: ${min20()}</p>`;
+}
+//
+//
+//
+//
+//
+//
+
