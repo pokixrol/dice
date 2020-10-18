@@ -232,3 +232,60 @@ function vypisStatistiky20 (){
 //
 //
 
+const stokostka = document.getElementById('stokostka');
+const stostatistika = document.getElementById('stostatistika');
+const stotlacitko = document.getElementById('stotlacitko');
+const stokostkatext = document.getElementById('stokostkatext');
+let hod100 = 1;
+let hody100 = [];
+let timer100 = false;
+
+function animace100 () {
+    hod100 = Math.ceil (Math.random() * 100);
+    stokostkatext.innerHTML = hod100;
+}
+stotlacitko.addEventListener('click', function(){
+    if(!timer100){
+        timer100 = setInterval(animace100, 50);
+        stotlacitko.innerText = 'Stop';
+    }else{
+        clearInterval(timer100);
+        timer100 = false;
+        stotlacitko.innerText = 'Play';
+        hody100.push(hod100);
+        vypisStatistiky100();
+    }
+    
+})
+
+function suma100(){
+    let sum = 0;
+    for (let i = 0; i < hody100.length; i++) {
+        sum += hody100[i];
+    }
+    return sum;
+}
+
+function max100(){
+    let maximum = 1;
+    hody100.forEach(function(value, index){
+        if (value > maximum) maximum = value;
+    })
+    return maximum;
+}
+
+function min100(){
+    let minimum = 100;
+    hody100.forEach(function(value, index){
+        if (value < minimum) minimum = value;
+    })
+    return minimum;
+}
+function vypisStatistiky100 (){
+    stostatistika.innerHTML = `<p>Poslední hod: ${hod100}</p>`;
+    stostatistika.innerHTML += `<p>Počet hodů: ${hody100.length}</p>`;
+    stostatistika.innerHTML += `<p>Součet: ${suma100()}</p>`;
+    stostatistika.innerHTML += `<p>Průměr: ${(suma100() / hody100.length).toFixed(2)}</p>`;
+    stostatistika.innerHTML += `<p>Maximum: ${max100()}</p>`;
+    stostatistika.innerHTML += `<p>Minimum: ${min100()}</p>`;
+}
