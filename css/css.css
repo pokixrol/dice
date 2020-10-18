@@ -9,6 +9,33 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
+  .centered2 {
+    position: absolute;
+    top: 60%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+  }
+  .centered3 {
+    position: absolute;
+    top: 50%;
+    left: 49%;
+    transform: translate(-50%, -50%);
+  }
+  .centered4 {
+    position: absolute;
+    top: 50%;
+    left: 51%;
+    transform: translate(-50%, -50%);
+  }
   #stokostkatext{
     font-size: 200%;
+  }
+  #ctyrykostkatext{
+    font-size: 200%;
+  }
+  #dvanactkostkatext{
+    font-size: 200%;
+  }
+  #dvacetkostkatext{
+    font-size: 170%;
   }

@@ -1,13 +1,14 @@
 const ctyrykostka = document.getElementById('ctyrykostka');
 const ctyrystatistika = document.getElementById('ctyrystatistika');
 const ctyrytlacitko = document.getElementById('ctyrytlacitko');
+const ctyrykostkatext = document.getElementById('ctyrykostkatext')
 let hod4 = 1;
 let hody4 = [];
 let timer4 = false;
 
 function animace4 () {
     hod4 = Math.ceil (Math.random() * 4);
-    ctyrykostka.src = '4kostka/4kostka' + hod4 + '.png';
+    ctyrykostkatext.innerHTML = hod4;
 }
 ctyrytlacitko.addEventListener('click', function(){
     if(!timer4){
@@ -116,13 +117,14 @@ function vypisStatistiky (){
 const dvanactkostka = document.getElementById('dvanactkostka');
 const dvanactstatistika = document.getElementById('dvanactstatistika');
 const dvanacttlacitko = document.getElementById('dvanacttlacitko');
+const dvanactkostkatext = document.getElementById('dvanactkostkatext')
 let hod12 = 1;
 let hody12 = [];
 let timer12 = false;
 
 function animace12 () {
     hod12 = Math.ceil (Math.random() * 12);
-dvanactkostka.src = '12kostka/12kostka' + hod12 + '.png';
+dvanactkostkatext.innerHTML = hod12;
 }
 dvanacttlacitko.addEventListener('click', function(){
     if(!timer12){
@@ -172,13 +174,14 @@ function vypisStatistiky12 (){
 const dvacetkostka = document.getElementById('dvacetkostka');
 const dvacetstatistika = document.getElementById('dvacetstatistika');
 const dvacettlacitko = document.getElementById('dvacettlacitko');
+const dvacetkostkatext = document.getElementById('dvacetkostkatext');
 let hod20 = 1;
 let hody20 = [];
 let timer20 = false;
 
 function animace20 () {
     hod20 = Math.ceil (Math.random() * 20);
-    dvacetkostka.src = '20kostka/20kostka' + hod20 + '.png';
+    dvacetkostkatext.innerHTML = hod20 ;
 }
 dvacettlacitko.addEventListener('click', function(){
     if(!timer20){
